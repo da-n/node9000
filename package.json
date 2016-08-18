@@ -1,0 +1,40 @@
+{
+  "name": "node-react-webpack",
+  "author": "Daniel Davidson",
+  "description": "NodeJS, React, Express, Webpack",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "./node_modules/.bin/mocha --reporter spec",
+    "webpack": "webpack -p",
+    "webpack:watch": "webpack -d --progress --colors --watch",
+    "css": "node-sass --source-map true --output-style compressed sass/style.scss --output public/stylesheets",
+    "css:watch": "npm run css && node-sass --source-map true --output-style compressed --watch sass/style.scss --output public/stylesheets"
+  },
+  "dependencies": {
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "morgan": "~1.6.1",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "request": "^2.74.0",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.1",
+    "node-sass": "^3.7.0",
+    "webpack": "^1.13.1"
+  }
+}
