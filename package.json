@@ -2,18 +2,19 @@
   "name": "node-react-webpack",
   "author": "Daniel Davidson",
   "description": "NodeJS, React, Express, Webpack",
+  "url" : "https://github.com/da-n/node-react-webpack",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js",
     "test": "./node_modules/.bin/mocha --reporter spec",
     "webpack": "webpack -p",
     "webpack:watch": "webpack -d --progress --colors --watch",
-    "css": "node-sass --source-map true --output-style compressed sass/style.scss --output public/stylesheets",
-    "css:watch": "npm run css && node-sass --source-map true --output-style compressed --watch sass/style.scss --output public/stylesheets"
+    "css": "node-sass --source-map true --output-style compressed client/scss/style.scss --output client/public/css",
+    "css:watch": "npm run css && node-sass --source-map true --output-style compressed --watch client/scss/style.scss --output client/public/css"
   },
   "dependencies": {
     "babel-core": "^6.11.4",

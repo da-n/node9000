@@ -25,4 +25,4 @@ RUN npm install -g webpack
 EXPOSE 3000
 
 # Send command to run node on app.js file
-# CMD pm2 start --no-daemon process.json
+CMD nodemon server/app.js
