@@ -4,6 +4,10 @@ FROM nodesource/trusty:4.4.5
 # File author / maintainer
 MAINTAINER Daniel Davidson
 
+# Allow for argument to be passed for NPM run command (production, dev)
+ARG MODE
+ENV MODE production
+
 # Set the term environment variable to "dumb"
 ENV TERM dumb
 
@@ -18,11 +22,8 @@ RUN npm install
 RUN npm install -g nodemon
 RUN npm install -g webpack
 
-# Add all files to app directory
-# ADD . .
-
 # Expose port
 EXPOSE 3000
 
 # Send command to run node on app.js file
-CMD nodemon server/app.js
+CMD npm run $MODE
