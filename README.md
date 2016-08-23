@@ -1,4 +1,4 @@
-# Node-React-Webpack
+# node9000
 
 Alpha status framework to create Node.js applications with Docker, Express and React.
 
@@ -8,12 +8,12 @@ First install and configure [Docker](https://www.docker.com/).
 
 Next git clone the repo and `cd` into it:
 
-    $ git clone https://github.com/da-n/node-react-webpack
+    $ git clone https://github.com/da-n/node9000
 
 Next run these Docker commands to build the image and run the container where `container_name` is the name given to your docker container. You can find the container name (assigned randomly) by running `docker ps`:
 
-    $ docker build --build-arg MODE=dev -t "node-react-webpack" .
-    $ docker run -p 3000:3000 -v $HOME/path/to/repo/:/usr/src/app/ -d node-react-webpack
+    $ docker build --build-arg MODE=dev -t "node9000" .
+    $ docker run -p 3000:3000 -v $HOME/path/to/repo/:/usr/src/app/ -d node9000
 
 *Note by default the Dockerfile is set to build images in production mode, the above command will instead run it in `dev` mode. Remove `--build-arf MODE=dev` to instead run in production mode.*
 
@@ -38,4 +38,4 @@ Beta status:
 
 ## License
 
-Node-React-Webpack is released under the MIT license. See [LICENSE](LICENSE) for details.
+node9000 is released under the MIT license. See [LICENSE](LICENSE) for details.

@@ -1,8 +1,8 @@
 {
-  "name": "node-react-webpack",
+  "name": "node9000",
   "author": "Daniel Davidson",
   "description": "NodeJS, React, Express, Webpack",
-  "url" : "https://github.com/da-n/node-react-webpack",
+  "url" : "https://github.com/da-n/node9000",
   "version": "0.0.1",
   "private": false,
   "license": "MIT",
