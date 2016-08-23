@@ -1,6 +1,6 @@
 # Node-React-Webpack
 
-This is an early (alpha) barebones dev framework to create Node.js applications with React.
+Alpha status framework to create Node.js applications with Docker, Express and React.
 
 ## Installing
 
