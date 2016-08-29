@@ -15,9 +15,9 @@ ENV PORT 8080
 ADD package.json package.json
 
 # Install npm packages
-RUN npm install
-RUN npm install -g if-env
 RUN npm install -g webpack
+RUN npm install -g webpack-dev-server
+RUN npm install
 
 # Expose port
 EXPOSE 8080

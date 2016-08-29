@@ -1,10 +1,12 @@
 # node9000
 
-Alpha status React framework to create Node.js applications with Docker, Express and React. Uses React and React-Router.
+Alpha status React framework to create Node.js applications with Docker, Express and React. Uses React and React Router.
 
 ## Installing
 
-First install and configure [Docker](https://www.docker.com/).
+### Option 1: Docker
+
+To use the Docker version, first install and configure [Docker](https://www.docker.com/).
 
 Next git clone the repo and `cd` into it:
 
@@ -23,13 +25,37 @@ Once the container is up and running, you can exec into it and run commands (lis
 
     $ docker exec -it container_name /bin/bash
 
+### Option 2: Native
+
+To just run on your local machine you will need to have Node.js and NPM installed and configured. You can then run the following commands from the project root folder (not tested on Windows):
+
+    # npm install -g webpack
+    # npm install -g webpack-dev-server
+    $ npm install
+
+Once everything is installed you can start the server with the following command:
+
+    $ npm start
+
+Note that by default, the server will be started in development mode, this is not recommended for production use. You can run an experimental production version with
+the following command:
+
+    $ NODE_ENV=production npm start
+
+## React Router
+
+[React Router](https://github.com/reactjs/react-router) is used and some examples from the official project are included to get started. To find out more about React Router follow the [official tutorial](https://github.com/reactjs/react-router-tutorial) and adapt as required.
+
 ## Todo
 
 Beta status:
 
 1. Improve README with examples and usage guidelines.
-2. Babel integration.
-3. Finish todo list.
+2. Add Redux.
+3. Add tests.
+4. Add SASS support.
+5. Add asset and image pipeline.
+6. Finish todo list.
 
 ## History
 
