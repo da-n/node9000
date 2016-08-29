@@ -1,6 +1,6 @@
 # node9000
 
-Alpha status framework to create Node.js applications with Docker, Express and React.
+Alpha status React framework to create Node.js applications with Docker, Express and React. Uses React and React-Router.
 
 ## Installing
 
@@ -17,7 +17,7 @@ Next run these Docker commands to build the image and run the container where `c
 
 *Note by default the Dockerfile is set to build images in production mode, the above command will instead run it in `dev` mode. Remove `--build-arf MODE=dev` to instead run in production mode.*
 
-If nothing failed, you should be able to see the server running at [http://localhost:3000](http://localhost:3000).
+If nothing failed, you should be able to see the server running at [http://localhost:8080](http://localhost:8080).
 
 Once the container is up and running, you can exec into it and run commands (listed below). Issue the following command:
 
@@ -28,13 +28,13 @@ Once the container is up and running, you can exec into it and run commands (lis
 Beta status:
 
 1. Improve README with examples and usage guidelines.
-2. Add History section to README.
-3. Babel integration.
-4. Finish todo list.
+2. Babel integration.
+3. Finish todo list.
 
 ## History
 
-0.0.1 - Alpha, not feature complete
+0.0.2 - Adding official React-Router example implementation.
+0.0.1 - Alpha, not feature complete.
 
 ## License
 
