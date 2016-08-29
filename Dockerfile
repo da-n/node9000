@@ -4,10 +4,6 @@ FROM nodesource/trusty:4.4.5
 # File author / maintainer
 MAINTAINER Daniel Davidson
 
-# Allow for argument to be passed for NPM run command (production, dev)
-ARG MODE
-ENV MODE production
-
 # Set the term environment variable to "dumb"
 ENV TERM dumb
 

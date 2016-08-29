@@ -1,42 +1,25 @@
-var Path = require('path');
-var Webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var webpack = require('webpack')
+var path = require('path')
 
-var NODE_MODULES_DIR = Path.join(__dirname, 'node_modules');
+module.exports = {
+  entry: path.resolve(__dirname, 'index.js'),
 
-var config = {
-  addPlugin: function (plugin) {
-    this.plugins.push(plugin);
-  },
-  cache: true,
-  context: __dirname,
-  entry: {
-    app: [Path.resolve(__dirname, 'src/client/scripts/app.jsx')],
-    vendors: ['react', 'react-router', 'classnames', 'object-assign']
-  },
   output: {
-    path: Path.join(__dirname, 'build', 'scripts'),
-    publicPath: 'scripts/',
-    filename: 'app.js'
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public', 'build')
   },
+
   module: {
-    preLoaders: [
-      {test: /\.jsx$/, exclude: [NODE_MODULES_DIR], loader: "eslint-loader"},
-      {test: /\.js$/, exclude: [NODE_MODULES_DIR], loader: "eslint-loader"}
-    ],
     loaders: [
-      { test: /\.jsx$/, exclude: [NODE_MODULES_DIR], loader: 'jsx-loader' },
-      { test: /\.less$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader") }
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react' }
     ]
   },
-  plugins: [],
 
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  }
-};
-
-config.addPlugin(new Webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'));
-config.addPlugin(new ExtractTextPlugin("style.css", { allChunks: true }));
-
-module.exports = config;
+  // add this handful of plugins that optimize the build
+  // when we're in production
+  plugins: process.env.NODE_ENV === 'production' ? [
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin()
+  ] : [],
+}
