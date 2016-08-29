@@ -12,10 +12,10 @@ Next git clone the repo and `cd` into it:
 
 Next run these Docker commands to build the image and run the container where `container_name` is the name given to your docker container. You can find the container name (assigned randomly) by running `docker ps`:
 
-    $ docker build --build-arg MODE=dev -t "node9000" .
-    $ docker run -p 3000:3000 -v $HOME/path/to/repo/:/usr/src/app/ -d node9000
+    $ docker build -t "node9000" .
+    $ docker run -p 8080:8080 -v $HOME/path/to/repo/:/usr/src/app/ -d node9000
 
-*Note by default the Dockerfile is set to build images in production mode, the above command will instead run it in `dev` mode. Remove `--build-arf MODE=dev` to instead run in production mode.*
+*Note by default the Dockerfile is set to build images in dev mode, production mode will run it with server side rendering but is currently experimental. You can select production mode by setting NODE_END to "production" in package.json.*
 
 If nothing failed, you should be able to see the server running at [http://localhost:8080](http://localhost:8080).
 
