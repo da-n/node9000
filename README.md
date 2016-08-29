@@ -33,8 +33,8 @@ Beta status:
 
 ## History
 
-0.0.2 - Adding official React-Router example implementation.
-0.0.1 - Alpha, not feature complete.
+- 0.0.2 - Adding official React-Router example implementation.
+- 0.0.1 - Alpha, not feature complete.
 
 ## License
 
